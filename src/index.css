@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+/* HTML5Qrcode viewports & injected layouts centering and aspect fitting constraints */
+#qr-reader-viewport {
+  width: 100% !important;
+  height: 100% !important;
+  position: absolute !important;
+  inset: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  overflow: hidden !important;
+  border: none !important;
+  background-color: transparent !important;
+  border-radius: 1rem !important;
+}
+
+#qr-reader-viewport video {
+  width: 100% !important;
+  height: 100% !important;
+  min-width: 100% !important;
+  min-height: 100% !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  object-fit: cover !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  border-radius: 1rem !important;
+}
+
+/* Ensure the dynamically injected shaded overlay region is fitted without distorting the transparent scanning target template */
+#qr-reader-viewport #qr-shaded-region,
+#qr-reader-viewport div[id*="qr-shaded-region"] {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  box-sizing: border-box !important;
+  border-radius: 1rem !important;
+  overflow: hidden !important;
+  border: 1px solid rgba(59, 130, 246, 0.25) !important;
+}
+
+/* Make all crop backdrop dividers in html5-qrcode completely transparent so scanner shows in full div */
+#qr-reader-viewport #qr-shaded-region > div {
+  background-color: transparent !important;
+  border-color: transparent !important;
+}
+
+/* Unify and style specific targeted scanner borders/regions inside one single consistent scanning frame coords */
+#qr-reader-viewport #qr-shaded-region > div:nth-of-type(7),
+#qr-reader-viewport #qr-shaded-region > div:nth-of-type(8) {
+  border-color: #3b82f6 !important;
+  background-color: transparent !important;
+  opacity: 0.9 !important;
+  filter: drop-shadow(0px 0px 8px rgba(59, 130, 246, 0.6)) !important;
+}
+
+#qr-reader-viewport canvas {
+  max-width: 100% !important;
+  max-height: 100% !important;
+  object-fit: contain !important;
+}
+

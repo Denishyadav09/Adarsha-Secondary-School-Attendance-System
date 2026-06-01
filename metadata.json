@@ -1,0 +1,6 @@
+{
+  "name": "QR Code Attendance System",
+  "description": "A student attendance system utilizing QR code generation and live scanning via camera or QR code image upload.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
